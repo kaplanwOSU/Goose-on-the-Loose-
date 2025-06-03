@@ -6,6 +6,9 @@ bool rightButton = 0;
 volatile bool buttonFlag = false;
 volatile bool buttonFlag = false;
 
+int cordX = 20;
+int cordY = 20;
+
 void setup() {
 randomSeed(analogRead(0));
 CircuitPlayground.begin();
@@ -17,7 +20,9 @@ attachInterrupt(digitalPinToInterrupt(7), slideSwitchISR, LOW);
 attachInterrupt(digitalPinToInterrupt(5), rightButtonISR, FALLING);
 attachInterrupt(digitalPinToInterrupt(4), leftButtonISR, FALLING);
   Serial.Println ("Goose on the Loose!");
-  Serial.Println ("Rules");
+storyLine();
+randomLocations();//serial print some stuff.
+rules();//serial print some more stuff.
 //list rules withe serial print here:
 
 }
@@ -93,4 +98,50 @@ delay(100);
 
 void slideSwitchISR() {//keeps track or is the flag is raised.
 switchFlag = false;
+}
+
+void rules(){
+    Serial.Println ("RULES: ");
+  Serial.Println ("Loose Goose ");
+}
+
+void randomLocation(){
+int randValT1X = random (cordX);
+int randValT1Y = random (cordY);
+  Serial.println("Trap 1");
+    Serial.println(randValT1X);
+    Serial.println(randValT1Y);
+int randValT2X = random (cordX);
+int randValT2Y = random (cordY);
+  Serial.println("Trap 2");
+    Serial.println(randValT2X);
+    Serial.println(randValT2Y);
+int randValT3X = random (cordX);
+int randValT3Y = random (cordY);
+  Serial.println("Trap 3");
+    Serial.println(randValT3X);
+    Serial.println(randValT3Y);
+  //Obsticals:
+int randValO1X = random (cordX);
+int randValO1Y = random (cordY);
+  Serial.println("Obstacle 1");
+    Serial.println(randValO1X);
+    Serial.println(randValO1Y);
+int randValO2X = random (cordX);
+int randValO2Y = random (cordY);
+  Serial.println("Obstacle 2");
+    Serial.println(randValO2X);
+    Serial.println(randValO2Y);
+int randValO3X = random (cordX);
+int randValO3Y = random (cordY);
+  Serial.println("Obstacle 3");
+    Serial.println(randValO3X);
+    Serial.println(randValO3Y);
+}
+void storyLine(){
+    Serial.println("Uh-oh! Your 75 year old neighbor's infamously aggressive goose has run away again and posters of the missing goose have filled the neighborhood." );
+      Serial.println("*As you read something catches your eye*");
+      Serial.println("The coner of the poster offers $300 to the first person to bring back the loose goose.");
+      
+
 }
