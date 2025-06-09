@@ -14,10 +14,15 @@ Serial Print: Prints rules, the story line, as well as uses random interger func
 Upon start the game uses serial print to explain the following rules:
 
 -Loose goose gets to spin each turn for a randomized dirrection");
+
 -Animal patrol gets to spin once per turn in player defined dirrection");
+
 -Bread trap skips one Loose Goose turn if crossed.");
+
 -If an Animal Patrol player goes through an obstical they take twice as to move.");
+
 -Anamial Patrol and Loose Goose fight if in adjacent tiles.");
+
 -If Animal Patrol players lose fight, they miss 1 turn and return to start 
 -First Animal Patrol player to win the fight wins the game"
 
